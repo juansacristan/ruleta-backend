@@ -1,7 +1,11 @@
 const mongoose = require ('mongoose')
 
 const RuletaSchema = new mongoose.Schema({
-    status:{
+    numeromesa:{
+        type: String
+    },
+    estado:{
+        type: String,
         enum:['abierta', 'cerrada'],
         default:'abierta'
     },

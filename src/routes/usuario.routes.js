@@ -7,6 +7,6 @@ const { getUsuario, crearUsuario, deleteUsuario, getbyidUsuario } = require('../
 router.get('/', getUsuario);
 router.post('/', crearUsuario);
 router.delete('/:id', deleteUsuario);
-router.get('/', getbyidUsuario);
+router.get('/:id', getbyidUsuario);
 
 module.exports = router;

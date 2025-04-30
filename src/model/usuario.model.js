@@ -1,23 +1,20 @@
-const mongoose = require ('mongoose')
+const mongoose = require ('mongoose');
 
 const UsuarioSchema = new mongoose.Schema({
     nombre:{
-        type: String, 
-        required: true
+        type: String 
     },
     dinero:{
-        type: Number, 
-        default: 50000, 
+        type: Number,
+        default: 10000
     },
-    apostado:{
+    apostar:{
         type: Number
     },
-    color:{
-        type: String
-    },
-    ganancia:{
-        type: Number
-    }    
+    numero:{
+        type: Number,
+        required: true
+    }
 },{
     versionKey: false
 });
