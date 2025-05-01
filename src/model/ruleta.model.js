@@ -1,8 +1,12 @@
 const mongoose = require ('mongoose')
 
 const RuletaSchema = new mongoose.Schema({
-    numeromesa:{
-        type: String
+    usuario:{
+        type: mongoose.Schema.ObjectId,
+        ref: 'usuario'
+    },
+    numero:{
+        type: Number
     },
     estado:{
         type: String,
@@ -14,6 +18,9 @@ const RuletaSchema = new mongoose.Schema({
     },
     resultados:{
         type: Array
+    },
+    monto:{
+        type: Number
     }
 
 },{

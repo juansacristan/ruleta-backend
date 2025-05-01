@@ -8,12 +8,8 @@ const UsuarioSchema = new mongoose.Schema({
         type: Number,
         default: 10000
     },
-    apostar:{
-        type: Number
-    },
     numero:{
         type: Number,
-        required: true
     }
 },{
     versionKey: false

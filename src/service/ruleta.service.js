@@ -4,6 +4,18 @@ async function dbInsertRuleta (newRuleta){
     return await RuletaSchema.create (newRuleta);
 }
 
+async function dbAbiertaRuleta (id){
+    return await RuletaSchema.findById(id);
+}
+
+async function dbApuestaRuleta (id){
+    return await RuletaSchema.findById(id);
+}
+
+async function dbCerradaRuleta (id){
+    return await RuletaSchema.findById(id);
+}
+
 async function dbGetRuleta (){
     return await RuletaSchema.find();
 }
@@ -26,6 +38,9 @@ async function dbUpdateRuletaById (id, newUsuario){
 
 module.exports ={
     dbInsertRuleta,
+    dbAbiertaRuleta,
+    dbApuestaRuleta,
+    dbCerradaRuleta,
     dbGetRuleta,
     dbDeleteRuleta,
     dbGetByIdRuleta,
