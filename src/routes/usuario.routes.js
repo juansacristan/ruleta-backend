@@ -1,12 +1,16 @@
-const express = require ('express')
+const express = require('express');
+const { getRuleta, crearRuleta, deleteRuleta, getbyidRuleta, patchRuleta,
+  abiertaRuleta, apuestaRuleta, cerradaRuleta } = require('../controller/ruleta.controller');
+
 const router = express.Router();
-const { getUsuario, crearUsuario, deleteUsuario, getbyidUsuario } = require('../controller/usuario.controller');
 
-// http://localhost:3000/api/usuario
-
-router.get('/', getUsuario);
-router.post('/', crearUsuario);
-router.delete('/:id', deleteUsuario);
-router.get('/:id', getbyidUsuario);
+// http://localhost:3000/api/ruleta
+router.get('/', getRuleta);
+router.post('/', crearRuleta);
+router.get('/:id', getbyidRuleta);
+router.patch('/:id', patchRuleta);
+router.patch('/abrir/:id', abiertaRuleta);
+router.patch('/apostar/:id', apuestaRuleta);
+router.patch('/cerrar/:id', cerradaRuleta);
 
 module.exports = router;

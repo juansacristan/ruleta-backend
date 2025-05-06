@@ -15,6 +15,6 @@ app.use(cors())
 app.use('/api/usuario', require('./routes/usuario.routes'));
 app.use('/api/ruleta', require('./routes/ruleta.routes'));
 
-app.listen(3000, function(){
-    console.log('Servidor si esta corriendo');  
+app.listen(3001, function(){
+    console.log('Servidor si esta corriendo el puerto 3001');  
 });

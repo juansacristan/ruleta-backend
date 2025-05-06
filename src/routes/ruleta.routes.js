@@ -1,6 +1,6 @@
 const express = require('express');
 const {
-  getRuleta, crearRuleta, deleteRuleta, getbyidRuleta, patchRuleta,
+  getRuleta, crearRuleta, getbyidRuleta, patchRuleta,
   abiertaRuleta, apuestaRuleta, cerradaRuleta
 } = require('../controller/ruleta.controller');
 

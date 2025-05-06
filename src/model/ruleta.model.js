@@ -1,35 +1,36 @@
-const mongoose = require ('mongoose')
+const mongoose = require('mongoose');
 
-const RuletaSchema = new mongoose.Schema({
-    usuario:{
-        type: mongoose.Schema.ObjectId,
-        ref: 'usuario'
+const ApuestaSchema = new mongoose.Schema({
+  usuario:{ 
+    type: mongoose.Schema.ObjectId, 
+    ref: 'usuario' 
     },
-    numero:{
-        type: Number
-    },
-    estado:{
-        type: String,
-        enum:['abierta', 'cerrada'],
-        default:'abierta'
-    },
-    apuestas:{
-        type: Array
-    },
-    resultados:{
-        type: Array
-    },
-    monto:{
-        type: Number
-    }
-
-},{
-    versionKey: false
+    tipo: String,
+    valor: Number,
+    monto: Number
 });
 
-const RuletaModel = mongoose.model(
-    'ruleta',
-    RuletaSchema
-)
+const ResultadoSchema = new mongoose.Schema({
+  usuario:{
+    type: mongoose.Schema.ObjectId, ref: 'usuario' },
+    tipo: String,
+    valor: Number,
+    monto: Number,
+    premio: Number
+});
 
-module.exports = RuletaModel;
+const RuletaSchema = new mongoose.Schema({
+  estado: {
+    type: String,
+    enum: ['abierta', 'cerrada'],
+    default: 'cerrada'
+  },
+  numeroGanador: Number,
+  colorGanador: String,
+  apuestas: [ApuestaSchema],
+  resultados: [ResultadoSchema]
+}, {
+  versionKey: false
+});
+
+module.exports = mongoose.model('ruleta', RuletaSchema);
